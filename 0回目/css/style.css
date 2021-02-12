@@ -1,0 +1,625 @@
+@charset "utf-8";
+html{
+    font-size: 62.5%;/* 16px × 62.5px=10px*/
+}
+
+body{
+
+    coler: #333333;
+    font-family:"Open Sans",'ヒラギノ角ゴ ProN W3', Hiragino Kaku Gothic ProN,"メイリオ",Meiryo,sans-serif;
+    font-size: 1.6rem;
+
+}
+
+.site-title{
+    font-size:2.4rem;
+    font-weight:bold ;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.text-center{
+    text-align: center;
+
+}
+
+/*------------
+
+cheese-imege
+
+*------------*/
+.cheese-image{
+    position: relative;
+}
+
+.cheese-image__text{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+    color: #fff;
+    font-size: 46px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+.cheese-image__text1{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+    color: #fff;
+    font-size: 26px;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+}
+
+/*------------
+
+header
+
+*------------*/
+.header{
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.header-warpper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.header-images{
+    width: 200px;
+    
+
+}
+
+.nav-list{
+    display: flex;
+}
+
+.nav-item{
+    margin: 0 0 0 48px;
+}
+.nav-item>a{
+    color:#222;
+
+}
+
+/*----------
+   about
+*-----------*/
+
+.about{
+    padding: 40px 0;
+}
+
+.about-wrapper{
+    width: 640px;
+    margin: auto;
+    line-height: 2;
+}
+
+.about__title{
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #ffd61a;
+
+}
+.about-de{
+    padding: 0 0 40px;
+}
+
+.about-pa{  
+    padding: 0 0 40px;
+}
+
+
+
+/*----------
+   Coures
+*-----------*/
+.course{
+    padding: 40px 0;
+}
+
+.course-wrapper{
+    width: 540px;
+    margin: auto;
+    line-height: 2;
+    flex: 50%;
+}
+.course__title{
+    margin: 0 0 40px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    
+}
+.course-list{
+    width: 520px;
+    margin: auto;
+    padding:0 100px;
+    box-sizing: border-box;
+    line-height: 2;
+    flex: 50%;
+}
+
+.course__back{
+    background-color: #fafafa;
+}
+.course__box{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.course__img{
+    width: 682px;
+    flex: 50%;
+}
+
+
+/*----------
+   NEWS
+*-----------*/
+
+.news{
+    padding: 80px 0;
+}
+
+.news-wrapper{
+    max-width: 1140px;
+    margin: auto;
+    line-height: 2;  
+}
+
+.section-news-title{
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #ffd61a;
+}
+.section-news-title-en{
+    font-size: 1.7rem;
+    font-weight: normal;
+    padding: 0 0 40px;
+}
+
+.section-news-2{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.section-news-3{
+    font-size: 1rem; 
+    color: #9999;
+}
+
+.section-news-1{ 
+    margin-top:  24px;
+    padding-bottom: 24px;
+    
+    
+
+}
+
+.section-news-list{
+    display: flex;
+    justify-content: space-between;
+    width: 1140px;
+    margin: auto;
+    padding: 0 0 32px
+    ;
+    /*
+    margin-left: auto;
+    margin-right: auto;
+    */
+
+}
+
+.section-news-list-item{
+    width: 364px;
+}
+
+
+.ban{
+    display: block;
+    width: 214px;
+    margin: auto;
+    padding: 21px 0;
+    background-color: #ffd61a;
+    color:#fff;
+    font-size: 1.8rem;
+}
+
+/*----------
+   access
+*-----------*/
+.Access{
+    padding: 80px 0;
+    background-color: #c9c9c9;
+}
+
+.access-image{
+    position: relative;
+    max-width: none;
+    margin: 0 0 40px;
+}
+
+.access-wrapper{
+    width: 560px;
+    margin: auto;
+    line-height: 2;
+}
+.access__back{
+    background-color: #fafafa;
+}
+
+.access__title{
+    margin: 0 0 40px;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.access-inner{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 40px;
+}
+.access-title{
+    width: 152px;
+    margin:  0 20px 0 0;
+    font-weight: bold;
+    text-align: right;
+}
+
+.access-item{
+    width: 388px;
+    margin: 0 0 20px;
+}
+
+
+
+/*------------
+contact
+*-------------*/
+.contact{
+    padding: 80px 0 64px;
+}
+
+.contact__title{
+    margin: 0 0 64px;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+.contact__title-s{
+    margin: 0 0 64px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+.contact-wrapper{
+    width: 560px;
+    margin: auto;  
+    line-height: 2;
+}
+
+/*------------
+ form
+*-------------*/
+
+.form-inner{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 40px;
+}
+.form-title{
+    width: 152px;
+    margin:  0 20px 0 0;
+    padding: 8px 0 0 0;
+    font-weight: bold;
+    text-align: right;
+}
+.form-title.check-radio{
+    padding: 0;
+}
+.form-item{
+    width: 388px;
+    margin: 0 0 40px;
+}
+.form-parts{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border: solid 1px #c9c9c9;
+    font-size: 1.6rem;
+}
+.form-label{
+    margin: 0 16px 0 0;
+    font-size: 1.4rem;
+}
+input[type*="radio"]{
+    -webkit-appearance: none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    width: 16px;
+    height: 16px;
+    margin: 0 10px 0 0;
+    border: solid 1px #a0a0a0;
+    border-radius: 50%;
+    vertical-align: -2px;
+}
+input[type*="radio"]:checked{
+    background-color: #a0a0a0;
+}
+.ban-submit{
+    -webkit-appearance: none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    border: none;
+
+}
+/*------------
+ footer
+*-------------*/
+.footer{
+    padding: 24px;
+    background-color: #707070;
+}
+.icon-up{
+    display: block;
+    padding: 10px o;
+    color: #fff;
+    font-size: 2.4rm;
+
+}
+.footer .wrapper{
+    position: relative;
+}
+.copyrights{
+    color: #fff;
+}
+.ban-pagetop{
+    position: absolute;
+    top: -78px;
+    right: 0;
+    display: block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #707070;
+
+}
+
+@media screen and (max-width:640px){
+
+
+    /*--------
+    *cheese-image
+    *--------*/
+    .cheese-image{
+        margin: 64px 0 0;
+    }
+    .cheese-image__text{
+        font-size: 2.4rem;
+        white-space: nowrap;
+
+    }
+    .cheese-image__text1{
+        font-size: 1.7rem;
+    }
+
+
+    /*--------
+    *heater
+    *--------*/
+
+    .header{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 0;
+    }
+    .header-warpper{
+        display: block;
+        height: 64px;
+    }
+    .site-title{
+        padding: 24px 0;
+        font-size: 1.6rem
+        text-alian:center;
+
+    }
+    .header-images{
+        display: none;
+    }
+    .nav-list{
+        display: none;
+
+    }
+
+    /*--------
+    *about
+    *--------*/
+
+    .about-wrapper{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .about{
+        padding: 80px 0 60px;
+    
+    }
+    
+    .about__title{
+        margin: 0 0 24px;
+        border-radius: 0;
+    }
+    .about-images{
+        width: 445px;
+    }
+    .about-de{
+        margin: 0 0 20px;
+    
+    }
+
+    .ban-submit{
+        border-radius: 0;
+    }
+    
+    /*--------
+    *Coures
+    *--------*/
+    .course{
+        padding: 0;
+    }
+
+    .course-wrapper{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 10px;
+
+    }
+    .course__box{
+        box-sizing: border-box;
+        width: 445px;
+        padding: 0 10px;
+        display: block;
+    }
+
+    .course-list{
+        width: 445px;
+        padding: 0;
+        flex-direction: column-reverse;
+    }
+
+    .course__title{
+        display: block;
+
+    }
+    .course__img{
+        box-sizing: border-box;
+        width: 445px;
+        
+    }
+
+    /*--------
+    *news
+    *--------*/
+    .news{
+        padding: 40px 0;
+    }
+
+    .section-news-title{
+        margin:  0 0 40px;
+    }
+    .news-wrapper{
+        box-sizing: border-box;
+        padding: 0 10px;
+
+    }
+
+    .section-news-list{
+        display: block;
+        margin: 0 0 40px;
+    }
+
+    .section-news-list-item{
+        width: 445px;
+        margin: 0 0 40px;
+    }
+    .news-eyecatch{
+        margin: 0 0 20px;
+    }
+    .section-news-2{
+        width: 338px;
+    }
+
+    .section-news-3{
+        margin: 0 0 20px;
+
+
+    }
+    .ban{
+        width: 100%;
+        padding: 17px 0;
+        font-size: 1.6rem;
+    }
+    /*--------
+     *access
+    *--------*/
+
+    .access-inner{
+        width: 445px;
+        padding: none;
+    }
+
+
+
+
+    
+    /*--------
+    *contact
+    *--------*/
+    .contact{
+        padding: 40px 0 80px;
+    }
+    .contact-wrapper{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 10px;
+    }
+    .contact__title{
+        margin-top: 0 0 40px;
+    }
+    .form-inner{
+        display: block;
+        margin: 0 0 50px;
+    }
+    .form-title{
+        width: 100%;
+        margin: 0 0 20px;
+        padding: 0;
+        text-align: left; 
+    }
+    .form-item{
+        width: 100%;
+    }
+    .form-parts{
+        padding: 10px 8px;
+    }
+    .form-label{
+        margin: 0 20px 0 0;
+
+    }
+
+    /*--------
+    *footer
+    *--------*/
+    .footer{
+        padding: 20px 0;
+    }
+    .ban-pagetop{
+        display: none;
+    }
+    .copyrights{
+        font-size: 1rem;
+    }
+
+
+}
+
+@media screen and (max-width:1140px){ */
+    /* .header-warpper{ */
+        /* box-sizing: border-box; */
+        /* padding: 0 10px; */
+    /* } */
+/* } */
+.flex-direction
+
