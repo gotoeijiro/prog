@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+  <header class="header">
+    <img src="img/janken.gif" width="300" height="200">
+    <h1 class="taitol" >さあ！どれを出す！</h1>
+
+  </header>
+
+  <main>
+    <p class="setumei">どれか？じゃんけんアイコンをクイックしてね。</p>
+    <ul class="jankensentaku">
+      <li id="gu_btn"><img src="img/goo.gif" width="150" height="150"></li>
+      <li id="cho_btn"><img src="img/cyoki-02.gif" width="150" height="150"></li>
+      <li id="par_btn"><img src="img/paa-02.gif" width="150" height="150"></li>
+    </ul>
+    <div class="text-center">
+      <ul class="wapper">
+        <div>
+          <h2 class="taitol2">対戦相手は？</h2>
+          <ul>
+            <li id="pc_hands"><img src="img/aite1.png" width="250" height="200"></li>
+          </ul>
+        </div>
+      
+        <div>
+          <h2 class="taitol2"> 勝敗は</h2> 
+          <ul>
+            <li id="judgment"><img src="img/tm793.jpg" width="250" height="200"></li>
+          </ul>
+        </div>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+  </footer>
+  <script>
+    // じゃんけん用のSCRIPTを書いてください
+    $("#gu_btn").on("click",function(){
+      const r = Math.ceil(Math.random()*3); 
+      let view ="";
+      let view2 ="";
+      if(r == 1){
+        view='<img src="img/goo.gif" width="200" height="200">';
+        view2 ='<img src="img/b310_2.jpg" width="200" height="200""引分">';
+      }
+      if(r == 2){
+        view='<img src="img/cyoki-02.gif" width="200" height="200">';
+        view2 ='<img src="img/unnamed.png" width="200" height="200"勝ち"">';
+      }
+      if(r == 3){
+        view='<img src="img/paa-02.gif" width="200" height="200">';
+        view2 ='<img src="img/gori.jpg" width="200" height="200""負け">';
+      }
+      $("#pc_hands").html(view);
+      $("#judgment").html(view2);
+    });
+
+    // $("#gu_btn").on("click",function(){
+    //   const r = Math.ceil(Math.random()*3); 
+  
+    //   let view2 ="";
+    //   if(r == 1){
+    //     alert(11111)
+    //     view2 ="引き分け";
+    //     $("#judgment").html(view2);
+    //   }
+      
+    // });
+
+    $("#cho_btn").on("click",function(){
+      const r = Math.ceil(Math.random()*3); 
+      let view ="";
+      let view2 ="";
+      if(r == 1){
+        view='<img src="img/goo.gif" width="200" height="200">';
+        view2 ='<img src="img/gori.jpg" width="200" height="200""負け">';
+      }
+      if(r == 2){
+        view='<img src="img/cyoki-02.gif" width="200" height="200">';
+        view2 ='<img src="img/b310_2.jpg" width="200" height="200""引分">';
+      }
+      if(r == 3){
+        view='<img src="img/paa-02.gif" width="200" height="200">';
+        view2 ='<img src="img/unnamed.png" width="200" height="200"勝ち"">';
+      }
+      $("#pc_hands").html(view);
+      $("#judgment").html(view2);
+    });
+
+    $("#par_btn").on("click",function(){
+      const r = Math.ceil(Math.random()*3); 
+      let view ="";
+      let view2 ="";
+      if(r == 1){
+        view='<img src="img/goo.gif" width="200" height="200">';
+        view2 ='<img src="img/unnamed.png" width="200" height="200"勝ち"">';
+      }
+      if(r == 2){
+        view='<img src="img/cyoki-02.gif" width="200" height="200">';
+        view2 ='<img src="img/gori.jpg" width="200" height="200""負け">';
+      }
+      if(r == 3){
+        view='<img src="img/paa-02.gif" width="200" height="200">';
+        view2 ='<img src="img/b310_2.jpg" width="200" height="200""引分">';
+      }
+      $("#pc_hands").html(view);
+      $("#judgment").html(view2);
+    });
+  
+
+    // gu_btn.style.color="#ff0000";
+    // gu_btn.style.fontSize="64px";
+
+    
+
+
+  </script>
+</body>
+</html>
