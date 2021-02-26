@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myMemoPad</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+</head>
+<body>
+<header>
+ <h1>珈琲鑑定記録</h1>
+</header>
+<main>
+  <div>
+    <p class="seisan">生産国名</p>
+    <input type="text" id="key">
+    <p class="seisan">農園名</p>
+    <input type="text" id="key">
+
+  </div>
+   <p class="koumoku">Aroma 香り</p>
+   <textarea id="memo"></textarea>
+   <p class="koumoku">Sweet 甘味</p>
+   <textarea id="memo2"></textarea>
+   <p class="koumoku">Acidity 酸味</p>
+   <textarea id="memo"></textarea>
+   <p class="koumoku">Body コク</p>
+   <textarea id="memo"></textarea>
+   <p class="koumoku">Bitter 苦味</p>
+   <textarea id="memo"></textarea>
+
+    <ul>
+        <li id="save">Save</li>
+        <li id="clear">Clear</li>
+    </ul>
+</main>
+<table id="list">
+<!-- ここに追加データが挿入される -->
+</table>
+
+
+<script>
+$(function(){
+  //1.Save クリックイベント
+  $("#save").on("click", function(){
+ //ここにクイックした時の処理を書く
+ //alert("ok");
+   const key = $("#key").val();
+   const value = $("#memo").val();
+
+   localStorage.setItem(key, value);
+   //const html = "<tr><th>key</th><td>value</td></tr>"
+   const html = "<tr><th>"+ key +"</th><td>"+ value +"</td></tr>";
+   //const html = "<tr><th>${key}</th><td>{value}</td></tr>";
+   $("#list").append(html);
+
+  });
+  
+  //2.clear クリックイベント
+  $("#clear").on("click",function(){
+    //ローカルストレージを全削除
+    localStorage.clear();    
+    $("#list").empty();
+  })
+
+  for(let i =0; i < localStorage.length; i++){
+    //keyをインデックスを使って取得 
+    const key = localStorage.key(i);
+    console.log(key);
+    //Valueをkeyを使って取得
+    const value = localStorage.getItem(key);
+    //htme  以下スクリーンショット
+    const html = "<tr><th>"+ key +"</th><td>"+ value +"</td></tr>";
+    //listにappendにする
+    $("#list").append()
+  }
+  
+  
+  //3.ページ読み込み：保存データ取得表示
+});
+
+
+
+</script>
+<footer><small>G's</small></footer>
+</body>
+</html>
