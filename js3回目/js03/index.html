@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja" >
+
+<head>
+  <meta charset="utf-8">
+  <title>Chatアプリ</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- コンテンツ表示画面 -->
+  <div class="wapper">
+    <div class="taitol2">
+      <img src = "imgs/download.jpg" width="350"height="200">
+      <img src = "imgs/北海道にエールゴロ.png"width="500" height="200">
+    </div>
+   
+    <h1 class="taitol">琥珀の記憶</h1>
+      <div class="sentaku">
+        <div class="daimei">名前: <input type="uname" id="uname"></div>
+        <div class="daimei">店名: <input type="shop" id="shop"></div>
+        <div class="daimei">COFFEE <input type="country" id="country"></div>
+      </div>
+
+    
+    <div>
+      <h1 class="daimei">Todey Coffee Memory 〜感じたままに〜</h1>
+      <textarea class="waku" id="text" cols="30" rows="3"></textarea>
+      <button id="send">記憶</button>
+    </div>
+    <div id="output" style="overflow: scroll; height: 300px;border: 1px solid rgb(64, 64, 68);text-align:center; width: 300px;" ></div>
+  </div>
+  <!--/ コンテンツ表示画面 -->
+
+
+ <div class="chatmemo">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- JQuery -->
+
+
+    <!--** 以下Firebase **-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+    <script>
+      
+      // Your web app's Firebase configuration 初期設定
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBVdy8k-ojpSy1P5LsuNh3HqXTF63nNONQ",
+        authDomain: "gschat-daf81.firebaseapp.com",
+        projectId: "gschat-daf81",
+        storageBucket: "gschat-daf81.appspot.com",
+        messagingSenderId: "566386508626",
+        appId: "1:566386508626:web:02911234664ecb2438f08b",
+        measurementId: "G-5HHCFENTSC"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      //データベースに接続して読み書きできるようにする
+      let ref = firebase.database().ref();
+      //送信ボタンをクイックしたら
+      //データベースにデータを送信する
+      let now = new Date();
+      //let year = now.getFullYear();
+      let date = new Intl.DateTimeFormat('ja-JP').format(now);
+
+
+      $("#send").on("click",function(){
+        //alert("ok");
+        let $d = new Date().toLocaleString({ timeZone: 'Asia/Tokyo'})
+        const uname = $("#uname").val();
+        const shop = $("#shop").val();
+        const country = $("#country").val();
+        const text = $("#text").val();
+
+        //alert(uname+text);
+        const msg = {
+          uname: uname,  //uname:"後藤"
+          shop: shop,
+          country: country,
+          text: text,  // text:"後藤です"
+          date: $d
+        }
+        ref.push(msg);
+        $("#output").animate({
+        scrollTop: $("#output")[0].scrollHeight
+      });
+      });
+      //データベースに追加された時に
+      //データの更新を行う
+      ref.on("child_added",function(data){
+        const v = data.val(); // valを使ってデータを取ってくる
+        const k = data.key; //ユニークキーを取得
+        // console.log(data);
+        // console.log(data.val());
+        const h =`<p>${v.uname}<br>${v.shop}<br>${v.country}<br>${v.text}<br>${v.date}</p>`;
+        $("#output").append(h);  //prepend=追加は上に記述される append追加は下に記述される 
+
+        
+
+
+      });//一つのデータが入った時に監視する ref=保存場所
+
+
+      
+      
+      $("#text").on("keydown",function(e){
+        //e.keyCode === 13はEnterを押したという時だけ動く
+        if(e.keyCode === 13) {
+          //時間取得
+          let $d = new Date().toLocaleString({ timeZone: 'Asia/Tokyo'})
+          console.log($d);
+          const uname = $("#uname").val();
+          const shop = $("#shop").val();
+          const country = $("#country").val();
+          const text = $("#text").val();
+
+          const msg = {
+          uname: uname,  
+          shop: shop,
+          country: country,
+          text: text,
+          date: $d  
+          }
+          ref.push(msg);
+          $("#output").animate({
+          scrollTop: $("#output")[0].scrollHeight
+          });
+
+        //console.log($("#output").height());
+        }
+        // console.log(e);
+        //e.preventDefault();間違っている時は送信できないようにする
+
+      });
+
+      // function scrollToEnd() {
+      // const output = document.getElementById('output');
+      // output.scrollTop = output.scrollHeight;
+      // }
+      // //監視する対象(この場合は"output")
+      // var renderer = document.getElementById("output");
+      // //要素が変化したときの処理を書く(この場合は下までスクロール)
+      // const observer = new MutationObserver((render) => {
+      //   scrollToEnd();
+      // });
+      // //監視する条件を書く
+      // //この場合、"scroll-inner"に子要素が追加されたとき
+      // observer.observe(renderer, {
+      //   childList: true,
+      // });
+
+      // firebase.analytics();
+
+    </script>
+  </dev>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

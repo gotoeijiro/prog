@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+body{
+    padding:0;
+    text-align: center;
+    font-size: 15px;
+    background-color: rgba(61, 61, 58, 0.103);
+    
+
+}
+
+output{  
+    text-align: center;
+    margin: auto;
+}
+.taitol{
+    margin: 0;
+    padding: 10px 0;
+    font-size: 50px;
+    color: brown;
+
+
+}
+.taitol2{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+
+}
+header{
+    background-color: #fff;
+    /* border-bottom: 0.5px solid #ccc; */
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+main{
+    /* border-bottom:1px solid #ccc; */
+    text-align: center;
+}
+.sentaku{
+    display: flex;
+}
+.daimei{
+    font-size: 25px;
+    padding: 1.5px 3px;
+
+
+}
+input{
+    width: 200px;
+    height: 30px;
+
+    
+}
+.waku{
+    width: 500px;
+    font-size: 20px;
+
+}
+
+button{
+    font-size: 25px;
+    color: ivory;
+    
+    width: 100px;
+    height: 50px;
+    background-color: green;
+
+}
+.wapper{ 
+    text-align: center;
+    justify-content: space-around;
+}
+
+
+

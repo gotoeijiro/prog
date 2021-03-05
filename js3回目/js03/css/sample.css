@@ -1,0 +1,101 @@
+
+
+body{
+    margin:0 ;
+    padding:0;
+    text-align: center;
+    font-size: 32px;
+}
+.taitol{
+    margin: 0;
+    padding: 40px 0;
+    font-size: 500px;
+    color: rgb(235, 27, 27);
+
+
+}
+.taitol2{
+    margin: 0;
+    padding: 0;
+
+}
+header{
+    background-color: #fff;
+    /* border-bottom: 0.5px solid #ccc; */
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.jankensentaku{
+    width: 100%;
+    text-align: center;
+    display:flexbox;
+
+}
+.setumei{
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    height:40px;
+    color: rgb(20, 151, 238);
+
+}
+.gu__btn{
+    background-color: darkred;
+
+}
+main{
+    /* border-bottom:1px solid #ccc; */
+    text-align: center;
+}
+.jadg{
+    margin: 0;
+    padding: 0;
+
+
+}
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc; 
+    text-align: center;
+}
+.gedan{
+    text-align: center;
+}
+
+.wapper{ 
+    display: flex;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    color: rgb(20, 151, 238);
+}
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+ul{
+    padding:inherit;
+    margin: 0;
+    /* border-top: 1px solid #000000; */
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    text-align: center;
+    width:100%;
+}
+
+
+li{
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    list-style-type:none;
+    border: 10px solid rgb(238, 129, 57);
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+
+
