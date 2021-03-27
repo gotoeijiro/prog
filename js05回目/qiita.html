@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Qiita API</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="search_area">
+    <div id="logo"><img src="./images/logo.png" class="logo_image"></div>
+    <input type="text" id="search_text">
+    <button id="search_button">検索</button>
+
+    <div id="loading" style="display: none;"><img src="./images/circle.gif" class="loading_icon"></div>
+  <div id="result"></div>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  $("#search_button").on("click", function() {
+    $("#loading").css("disple")
+    const searchText = $("search_text").val();
+    let str = "";
+    axios.get(`https://qiita.com/api/v2/items?page=1&per_page=20&query=tag:${searchText}`)
+    .then(function(response){
+      // response.data（配列）がdataに入るようになる
+      let data = response.data;
+      // data = [{色々なプロパティがあるオブジェクト},{},{},]
+      // {色々なプロパティがあるオブジェクト}, {色々なプロパティがあるオブジェクト}.....
+      for(let i = 0; i < data.length; i++) {
+        str += `<a href="${data[i].url}">${data[i].title}</a><br>`
+      }
+      $("#result").html(str);
+    }).catch(function(){
+       console.log("NG");
+       let data = respons.data
+    })
+    $("#loading").fadeIn(3000);
+    $("#loading").fadeOUt(3000);
+
+    
+    
+  // });
+  // $("#search_button").on("click", function() {
+  //   const searchText = $("#search_text").val();
+  //   axios.get(`https://qiita.com/api/v2/items?page=1&per_page=20&query=tag:${searchText}`)
+  //   .then(function(response){
+  //     //
+  //     let data = response.data;
+
+  //     //console.log(response);
+  //     for(let i = 0; i <data.length;i++){
+  //       str += `<a href="${data[i].url}">${data[i].title}</a><br>`
+  //     }
+  //     $("#result").html(str);
+
+
+  //   })
+
+    
+  });
+</script>
+</body>
+</html>
